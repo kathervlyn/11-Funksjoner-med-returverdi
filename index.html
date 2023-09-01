@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="mainDiv"></div>
+    <button onclick="createAndShowHtml('green', 'Hallo verden', 30)">test 1</button>
+    <button onclick="createAndShowHtml('gray', 'Hei på deg!', 20)">test 2</button>
+    <button onclick=" createAndShowHtml('yellow', 'GET Academy', 10, 'bolder')">test 3</button>
+    <script>
+
+        function createAndShowHtml(color, text, fontSize, fontWeight) {
+            document.getElementById('mainDiv').innerHTML = `
+            <div ${createStyle(color, fontSize, fontWeight)}>${text} </div>`;
+        }
+
+
+        function createStyle(color, fontSize, fontWeight) {
+            return `style=" ${createBackgroundColor(color)} ${createFontSize(fontSize)} ${createFontWeight(fontWeight)}"`;
+        }
+
+        function createBackgroundColor(color) {
+            return `background-color: ${color};`
+        }
+
+        function createFontSize(fontSize) {
+            return `font-size: ${fontSize}px;`
+        }
+
+        function createFontWeight(fontWeight) {
+            return `font-weight: ${fontWeight};`
+        }
+
+    </script>
+</body>
+
+</html>
